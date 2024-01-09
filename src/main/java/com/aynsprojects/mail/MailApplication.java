@@ -23,14 +23,17 @@ public class MailApplication {
 		mailApplication.sendMail();
 	}
 
-	public void sendMail()  {
+	public void sendMail() {
 		System.out.println("ON ENTRE DANS LA METHODE 'SENDMAIL()'");
-		SimpleMailMessage message = new SimpleMailMessage();
-		message.setFrom("joly.idf@outlook.fr");
-		message.setTo("joly.idf@outlook.fr");
-		message.setSubject("test sender best mail");
-		message.setText("on y arrive !");
-		emailSender.send(message);
+		try {
+			SimpleMailMessage message = new SimpleMailMessage();
+			message.setFrom("joly.idf@outlook.fr");
+			message.setTo("joly.idf@outlook.fr");
+			message.setSubject("test sender best mail");
+			message.setText("on y arrive !");
+			emailSender.send(message);
+		} catch (Exception e){
+			System.out.println("erreur : " + e.getMessage());
+		}
 	}
-
 }
