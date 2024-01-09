@@ -11,7 +11,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 public class MailApplication {
 
 	@Autowired
-	private final JavaMailSender emailSender;
+	private JavaMailSender emailSender;
 
 	protected MailApplication(JavaMailSender emailSender) {
 		this.emailSender = emailSender;
